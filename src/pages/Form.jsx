@@ -55,7 +55,7 @@ const ContactForm = () => {
 
     try {
       // Send a POST request to the correct backend API
-      await axios.post("https://community-gardens-kpvr.vercel.app/comments", {
+      await axios.post("https://community-gardens.onrender.com/comments", {
         name: sanitizedName,
         email: sanitizedEmail,
         message: sanitizedMessage,

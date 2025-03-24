@@ -48,7 +48,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "https://community-gardens-kpvr.vercel.app/login",
+        "https://community-gardens.onrender.com/login",
         {
           email: sanitizedEmail,
           password: sanitizedPassword,

@@ -14,7 +14,7 @@ const CustomizePage = () => {
     setResponse(null);
 
     try {
-      const res = await axios.post("http://localhost:3002/api/customize", {
+      const res = await axios.post("https://community-gardens.onrender.com/api/customize", {
         plant,
         zone,
       });

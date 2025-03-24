@@ -13,7 +13,7 @@ dotenv.config({ path: path.resolve(__dirname, "../.env") });
 const PORT = process.env.PORT || 3002;
 
 app.use(cors({
-  origin: "https://community-gardens-kpvr.vercel.app", // Allow frontend origin
+  origin: "https://community-gardens-henna.vercel.app", // Allow frontend origin
   methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
   credentials: true // Allow cookies if needed
 }));

@@ -12,7 +12,7 @@ const PlantList = ({ query, filters }) => {
   useEffect(() => {
     setLoading(true);
     fetch(
-      `https://community-gardens-kpvr.vercel.app/api/listPlants?q=${query}` // Removed extra quotes
+      `https://community-gardens.onrender.com/api/listPlants?q=${query}` // Removed extra quotes
     )
       .then((res) => {
         if (!res.ok) {

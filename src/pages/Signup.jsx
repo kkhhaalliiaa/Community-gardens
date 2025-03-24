@@ -96,7 +96,7 @@ const Signup = () => {
 
     try {
       const response = await axios.post(
-        "https://community-gardens-kpvr.vercel.app/register",
+        "https://community-gardens.onrender.com/register",
         userData
       );
 

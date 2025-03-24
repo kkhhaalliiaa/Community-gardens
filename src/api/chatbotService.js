@@ -1,4 +1,4 @@
-const API_URL = "https://community-gardens-kpvr.vercel.app/api/chatbot";
+const API_URL = "https://community-gardens.onrender.com/api/chatbot";
 
 export const fetchChatbotResponse = async (message, chatHistory) => {
   try {
