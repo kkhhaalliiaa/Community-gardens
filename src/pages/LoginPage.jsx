@@ -24,10 +24,13 @@ const LoginPage = () => {
     }
 
     try {
-      const response = await axios.post("https://ismael-capstones-gardens.vercel.app"-1h6s.onrender.com/login", {
-        email: sanitizedEmail,
-        password: sanitizedPassword,
-      });
+      const response = await axios.post(
+        "https://ismael-capstones-gardens.vercel.app/login",
+        {
+          email: sanitizedEmail,
+          password: sanitizedPassword,
+        }
+      );
 
       if (response.status === 200) {
         const { token, user } = response?.data || {};
