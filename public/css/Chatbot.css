@@ -1,0 +1,271 @@
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.chatbot-bubble {
+    position: absolute;
+    bottom: 70px; /* Adjusted for larger bubble */
+    right: 0;
+    background-color: var(--color-olive);
+    color: white;
+    padding: 15px 20px; /* Increased padding */
+    border-radius: 25px; /* Slightly larger border radius */
+    font-size: 1.1rem; /* Increased font size */
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+    animation: fadeIn 0.5s ease-in-out;
+    max-width: 250px; /* Limit the width for better readability */
+    text-align: center; /* Center-align text */
+}
+
+.chatbot-bubble:hover {
+    background-color: var(--color-tan);
+    transform: scale(1.05); /* Slight hover effect */
+}
+
+/* Floating Chatbot Button */
+.chatbot-icon {
+    width: 70px; /* Increased size */
+    height: 70px; /* Increased size */
+    background-color: var(--color-olive);
+    color: white;
+    font-size: 2.5rem; /* Increased font size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+.chatbot-icon:hover {
+    transform: scale(1.2); /* Increased hover effect */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* More prominent shadow */
+}
+
+.chatbot-icon.open {
+    background-color: var(--color-tan);
+}
+
+/* Open Chatbox */
+.chatbox {
+    position: fixed;
+    bottom: 90px; /* Adjusted for larger icon */
+    right: 20px;
+    width: 350px; /* Increased width */
+    height: 450px; /* Increased height */
+    background-color: white;
+    border-radius: 12px; /* Slightly larger border radius */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+/* Chatbox Header */
+.chatbox-header {
+    background-color: #8b9a72;
+    color: white;
+    padding: 14px; /* Slightly larger padding */
+    text-align: center;
+    font-size: 1.3rem; /* Slightly larger font size */
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between; /* Ensures X button stays on the right */
+    align-items: center;
+}
+
+/* Ensures the X button always appears */
+.chatbox-header .close-btn {
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* Messages Section */
+.chatbox-messages {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* User & Assistant Messages */
+.message {
+    padding: 8px 12px;
+    border-radius: 8px;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.message.user {
+    background-color: #b3a589;
+    color: white;
+    align-self: flex-end;
+    margin-right: 1px;
+}
+
+/* Improves message readability */
+.message.assistant {
+    background-color: #d9e4c4;
+    color: black;
+    align-self: flex-start;
+    padding: 10px;
+    line-height: 1.6; /* Adds spacing between lines */
+}
+
+/* Makes lists more readable */
+.message.assistant ul {
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+.message.assistant li {
+    margin-bottom: 5px;
+}
+
+/* Ensures bold text is properly visible */
+.message.assistant strong {
+    font-weight: bold;
+    color: #5a7344;
+}
+
+
+/* Typing Animation */
+.message.typing span {
+    display: inline-block;
+    animation: typing 1.5s infinite;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.message.typing span:nth-child(1) {
+    animation-delay: 0s;
+}
+.message.typing span:nth-child(2) {
+    animation-delay: 0.3s;
+}
+.message.typing span:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes typing {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+}
+
+/* Chatbox Input */
+.chatbox-input {
+    display: flex;
+    padding: 12px; /* Slightly larger padding */
+    border-top: 1px solid #ddd;
+    background-color: white;
+}
+
+.chatbox-input input {
+    flex-grow: 1;
+    padding: 10px; /* Increased padding */
+    border: 1px solid #ccc;
+    border-radius: 6px; /* Slightly larger border radius */
+    outline: none;
+    font-size: 1rem; /* Slightly larger font size */
+}
+
+.chatbox-input button {
+    padding: 10px 14px; /* Increased padding */
+    margin-left: 10px; /* Slightly larger margin */
+    border: none;
+    background-color: #8b9a72;
+    color: white;
+    border-radius: 6px; /* Slightly larger border radius */
+    cursor: pointer;
+    font-size: 1rem; /* Slightly larger font size */
+}
+
+.chatbox-input button:hover {
+    background-color: #6f7d58;
+}
+
+/* Mobile Responsiveness */
+@media (min-width: 768px) {
+    .chatbox {
+        width: 400px;
+        height: 60vh;
+        bottom: 90px;
+        right: 2%;
+    }
+
+    .chatbox-header {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .chatbox-messages {
+        padding: 8px;
+    }
+
+    .message {
+        font-size: 1.0rem;
+    }
+
+    .chatbox-input input {
+        padding: 6px;
+    }
+
+    .chatbox-input button {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+
+    .chatbot-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .chatbox {
+        width: 280px; /* Increased width for mobile */
+        height: 70vh; /* Adjusted height */
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .message {
+        font-size: 0.9em;
+    }
+
+    .chatbox-input input {
+        font-size: 0.9rem;
+    }
+
+    .chatbox-input button {
+        font-size: 0.8rem;
+    }
+
+    .chatbot-icon {
+        width: 55px; /* Increased size for mobile */
+        height: 55px;
+        font-size: 2rem; /* Adjusted font size */
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
