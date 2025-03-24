@@ -6,7 +6,7 @@
 
 Community Gardens is a full-stack web application designed to assist users in growing their own plants and vegetables. The platform provides an AI-powered chatbot for gardening guidance, a plant search feature, user authentication, and an admin panel for managing users and comments.
 
-[View Demo]("https://ismael-capstones-gardens.vercel.app".vercel.app/)
+[View Demo]("https://community-gardens-kpvr.vercel.app".vercel.app/)
 
 ## Table of Contents
 

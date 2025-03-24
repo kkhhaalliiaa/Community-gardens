@@ -25,7 +25,7 @@ const LoginPage = () => {
 
     try {
       const response = await axios.post(
-        "https://ismael-capstones-gardens.vercel.app/login",
+        "https://community-gardens-kpvr.vercel.app/login",
         {
           email: sanitizedEmail,
           password: sanitizedPassword,

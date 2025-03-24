@@ -4,7 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom"; // Import useNavigate for redirection
 import "../../public/css/Admin.css";
 
-const API_BASE_URL = "https://ismael-capstones-gardens.vercel.app";
+const API_BASE_URL = "https://community-gardens-kpvr.vercel.app";
 
 const Admin = () => {
   const [users, setUsers] = useState([]);
@@ -203,12 +203,11 @@ const Admin = () => {
             </div>
           </div>
         )}
-                    <button className="admin-logout-button" onClick={handleLogout}>
-        <LogOut className="admin-icon" /> Logout
-      </button>
+        <button className="admin-logout-button" onClick={handleLogout}>
+          <LogOut className="admin-icon" /> Logout
+        </button>
       </div>
     </div>
-    
   );
 };
 

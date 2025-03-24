@@ -14,7 +14,6 @@ const Signup = () => {
   const [errors, setErrors] = useState({});
   const navigate = useNavigate(); // For redirect after successful signup
 
-
   const validateForm = () => {
     let valid = true;
     let errors = {};
@@ -23,7 +22,8 @@ const Signup = () => {
       errors.username = "Username is required.";
       valid = false;
     } else if (!/^[a-zA-Z0-9_]+$/.test(username)) {
-      errors.username = "Username can only contain letters, numbers, and underscores.";
+      errors.username =
+        "Username can only contain letters, numbers, and underscores.";
       valid = false;
     }
 
@@ -96,7 +96,7 @@ const Signup = () => {
 
     try {
       const response = await axios.post(
-        "https://ismael-capstones-gardens.vercel.app/register",
+        "https://community-gardens-kpvr.vercel.app/register",
         userData
       );
 
@@ -136,7 +136,9 @@ const Signup = () => {
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
-            {errors.username && <span className="error-text">{errors.username}</span>}
+            {errors.username && (
+              <span className="error-text">{errors.username}</span>
+            )}
           </div>
           <div className="form-group">
             <label htmlFor="first-name">First Name:</label>
@@ -149,7 +151,9 @@ const Signup = () => {
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
             />
-             {errors.firstName && <span className="error-text">{errors.firstName}</span>}
+            {errors.firstName && (
+              <span className="error-text">{errors.firstName}</span>
+            )}
           </div>
           <div className="form-group">
             <label htmlFor="last-name">Last Name:</label>
@@ -162,7 +166,9 @@ const Signup = () => {
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
             />
-            {errors.lastName && <span className="error-text">{errors.lastName}</span>}
+            {errors.lastName && (
+              <span className="error-text">{errors.lastName}</span>
+            )}
           </div>
           <div className="form-group">
             <label htmlFor="email">Email:</label>
@@ -188,7 +194,9 @@ const Signup = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            {errors.password && <span className="error-text">{errors.password}</span>}
+            {errors.password && (
+              <span className="error-text">{errors.password}</span>
+            )}
           </div>
 
           <button type="submit">Sign Up</button>
