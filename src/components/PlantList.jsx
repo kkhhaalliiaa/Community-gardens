@@ -12,7 +12,7 @@ const PlantList = ({ query, filters }) => {
   useEffect(() => {
     setLoading(true);
     fetch(
-      `"https://ismael-capstones-gardens.vercel.app"-1h6s.onrender.com/api/listPlants?q=${query}`
+      `"https://ismael-capstones-gardens.vercel.app/api/listPlants?q=${query}`
     )
       .then((res) => {
         if (!res.ok) {
