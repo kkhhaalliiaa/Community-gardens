@@ -20,7 +20,7 @@ app.use(cors({
 app.use(helmet());
 app.use(express.json());
 
-app.use("/login", require("./routes/loginRoute.cjs"));
+app.use("/login", require("./routes/loginRoute.cjs")); // Ensure loginRoute.cjs handles POST requests
 app.use("/register", require("./routes/registerRoute.cjs"));
 app.use("/users", require("./routes/userRoute.cjs"));
 app.use("/comments", require("./routes/commentsRoute.cjs"));

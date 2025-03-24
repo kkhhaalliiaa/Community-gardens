@@ -36,7 +36,7 @@ const handleLogin = (req, res) => {
     }
 
     // Generate JWT Token with correct user_id
-    const payload = { user: { user_id: user.user_id, email: email } };
+    const payload = { user: { user_id: user.user_id, email: email, role_id: user.role_id } }; // Include role_id
 
     jwt.sign(payload, JWT_SECRET, { expiresIn: "1h" }, (err, token) => {
       if (err) {
